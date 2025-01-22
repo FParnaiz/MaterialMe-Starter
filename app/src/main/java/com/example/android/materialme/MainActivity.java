@@ -18,12 +18,15 @@ package com.example.android.materialme;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -82,8 +85,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         helper.attachToRecyclerView(mRecyclerView);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resetSports(view);
+            }
+        });
     }
-
+    public void resetSports(View view) {
+        // Reset logic
+        initializeData();
+        mAdapter.notifyDataSetChanged();
+    }
     /**
      * Initialize the sports data from resources.
      */
@@ -109,5 +123,6 @@ public class MainActivity extends AppCompatActivity {
         // Notify the adapter of the change.
         mAdapter.notifyDataSetChanged();
     }
+
 
 }
