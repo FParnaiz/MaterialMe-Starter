@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DetailActivity"
+
+        android:padding="0dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_sportsImage"
+            android:adjustViewBounds="true">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_title"
+            android:text="@string/title_placeholder"
+            android:padding="16dp"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            android:layout_alignBottom="@id/detail_sportsImage"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_newsTitle"
+            android:text="@string/news_placeholder"
+            android:layout_below="@id/detail_sportsImage"
+            android:textColor="?android:textColorSecondary"
+            android:padding="16dp"
+            style="@style/TextAppearance.AppCompat.Subhead" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_subTitle"
+            android:text="@string/sports_info_placeholder"
+            android:padding="16dp"
+            android:layout_below="@id/detail_newsTitle"
+            style="@style/TextAppearance.AppCompat.Subhead" />
+
+    </RelativeLayout>
+</ScrollView>
